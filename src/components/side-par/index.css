@@ -10,9 +10,26 @@
 
 .logo {
   
-  margin-top:10px    ;
+  margin-top:5px    ;
   
   transform: translate(-40%);
   /* Adjust width as needed */
   /* Maintain aspect ratio */
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+  height: 300px; /* Set the height of the parent div */
+  border: 1px solid black; /* Just for visualization */
+}
+
+.child {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.bottom-div {
+  margin-top: auto;
+  
+  
 }

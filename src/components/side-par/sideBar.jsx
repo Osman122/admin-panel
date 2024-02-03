@@ -8,7 +8,7 @@ const Sidebar = ({ open }) => {
   
 
   return (
-    <nav className={`bg-dark sidebar  `}
+    <nav className={`bg-dark sidebar parent `}
     style={open?{width:"300px",height: '100vh' ,transition: 'width 0.5s ease',overflowy:"auto"} : { width:"65px",overflowy:"auto" ,height: '100vh' ,transition: 'width 0.3s ease'}}>
     
       <div className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>
@@ -70,12 +70,14 @@ const Sidebar = ({ open }) => {
         </ul>
        
       </div>
-       <div className=""style={{paddingTop:"350px"}} >
+
+       <div className="bottom-div ">
          <hr className='text-light text-center'/>
-       <ul className="nav flex-column  ">
+         
+       <ul className="nav flex-column d-flex  ">
              
         
-        <li className={` dee rounded ${!open?"d-flex":"rounded "}`} >
+        <li className={` dee rounded  ${!open?"d-flex":"rounded "}`} >
             <a
                 href="/"
                 className="nav-link active d-flex p-3 "
@@ -89,7 +91,7 @@ const Sidebar = ({ open }) => {
              {open? <span className="text-light">logout</span>:<></>}
             </a>
         </li>
-        <li className={`  ${!open?"d-flex":""}`} >
+        <li className={`  ${!open?"":""}`} >
             <a
                 href="/aa"
                 className="nav-link active d-flex p-3"

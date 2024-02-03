@@ -1,0 +1,18 @@
+.dee :hover {
+  background-color: brown;
+    
+  }
+
+.dee:focus {
+   background-color: rgb(50, 42, 165);
+   outline: 4px dashed darkorange;
+       }
+
+.logo {
+  
+  margin-top:10px    ;
+  
+  transform: translate(-40%);
+  /* Adjust width as needed */
+  /* Maintain aspect ratio */
+}

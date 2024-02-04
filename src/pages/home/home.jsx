@@ -1,7 +1,7 @@
 const Home = () => {
     return (
       
-      <div style={{textAlign:"center" ,color:"pink"}}><h3> Mabrouk al hody ya mariuma </h3></div>
+      <div style={{textAlign:"center"}}><h3> Welcome Home </h3></div>
     )
   }
   

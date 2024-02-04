@@ -41,7 +41,7 @@
   
 }
 .sidebar::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
+  width: 5px; /* Width of the scrollbar */
 }
 
 /* Track */
@@ -51,7 +51,7 @@
 
 /* Handle */
 .sidebar::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar handle */
+  background: #8089b1; /* Color of the scrollbar handle */
   border-radius: 5px; /* Rounded corners for the scrollbar handle */
 }
 

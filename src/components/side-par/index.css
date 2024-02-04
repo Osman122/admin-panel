@@ -17,19 +17,45 @@
   /* Maintain aspect ratio */
 }
 .parent {
+  
+  
+  
   display: flex;
   flex-direction: column;
-  height: 300px; /* Set the height of the parent div */
+  height: 100%; /* Set the height of the parent div */
   border: 1px solid black; /* Just for visualization */
+  overflow-y: auto;
+  overflow-x :hidden;
+
+  
 }
 
 .child {
-  background-color: lightblue;
+  
   padding: 20px;
 }
 
 .bottom-div {
   margin-top: auto;
+  ;
   
-  
+}
+.sidebar::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 5px; /* Rounded corners for the scrollbar handle */
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
 }

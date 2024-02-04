@@ -3,10 +3,10 @@
     
   }
 
-.dee:focus {
+/* .dee:focus {
    background-color: rgb(50, 42, 165);
-   outline: 4px dashed darkorange;
-       }
+   
+       } */
 
 .logo {
   
@@ -58,4 +58,16 @@
 /* Handle on hover */
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: #555; /* Color of the scrollbar handle on hover */
+}
+.active {
+  background-color: rgb(61, 87, 160); /* Example of styling the active link */
+}
+/* NavLink:focus {
+  outline: none; /* Remove default focus outline */
+  /* Add your custom focus styles here *
+  background-color: #ebebeb;
+}
+ */
+ .NavLink {
+  text-decoration: none; /* Remove underline from NavLink components */
 }

@@ -7,8 +7,8 @@ import { LanguageContext } from './context/language';
 
 
 function App() {
-  const [contextLang, setContextLang] = useState("ar");
-  const [theme, setContextTheme] = useState("dark");
+  const [contextLang, setContextLang] = useState("en");
+  const [theme, setContextTheme] = useState("light");
 
   return (
     <BrowserRouter >

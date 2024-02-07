@@ -1,0 +1,24 @@
+
+  
+  .scroll-up-button:hover {
+    background-color: brown; /* Add a dark-grey background on hover */
+  }
+  .scroll-up-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    margin-inline: 20px;
+    padding: 12px 15px ;
+    border: none;
+    border-radius: 50px;
+    background-color:rgb(61, 87, 160); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-up-button.show {
+    display: block;
+    opacity: 1;
+  }

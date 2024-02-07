@@ -12,7 +12,7 @@ const Sidebar = ({ open }) => {
     <nav className={`bg-dark sidebar parent `}
     style={open?{width:"300px",height: '100vh' ,transition: 'width 0.5s ease',overflowy:"auto"} : { width:"65px",overflowy:"auto" ,height: '100vh' ,transition: 'width 0.3s ease'}}>
     
-      <div className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>
+      <div dir='ltr' className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>
        
         <div className='mx-4 d-flex my-2  ' style={{position:"relative"}}>
         <img   className={`${!open?"logo":""}`}  src="https://www.spruko.com/demo/dashlot/dist/assets/images/brand-logos/toggle-dark.png" alt="" 
@@ -72,7 +72,7 @@ const Sidebar = ({ open }) => {
        
       </div>
 
-       <div className="bottom-div ">
+       <div className="bottom-div " dir='ltr'>
          <hr className='text-light text-center'/>
          
        <ul className="nav flex-column d-flex  ">

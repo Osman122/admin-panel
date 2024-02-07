@@ -1,0 +1,11 @@
+.navbar {
+  transition: all 0.3s ease; /* Smooth transition for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}

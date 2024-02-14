@@ -1,7 +1,9 @@
+
 const Users = () => {
     return (
       
-      <div style={{textAlign:"center"}}><h3>  Users </h3></div>
+      <div style={{textAlign:"center"}}><h3>  Users </h3>
+      </div>
     )
   }
   

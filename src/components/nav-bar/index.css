@@ -1,10 +1,13 @@
 .navbar {
 
+  border-bottom: 1px;
+  border-color: black;
+  border-bottom-style: solid;
   
-  transition: all 0.3s ease; /* Smooth transition for the navbar */
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.685); /* Shadow effect */
   position:fixed; 
   top: 0;
+  font-size: 18px;
+  height: 65px;
 
 }
 

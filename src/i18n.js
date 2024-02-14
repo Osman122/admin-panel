@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import ar from './translation/ar.json'
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -10,10 +11,8 @@ const resources = {
       "Welcome to React": "Welcome to React and react-i18next"
     }
   },
-  fr: {
-    translation: {
-      "Welcome to React": "Bienvenue à React et react-i18next"
-    }
+  ar: {
+    translation: ar
   }
 };
 

@@ -31,19 +31,19 @@ const NavBar= ({ toggleSidebar }) => {
             <button onClick={(e)=>{if (contextLang === "ar") {
                                 setContextLang("en")
                                  console.log(contextLang)
-                                 i18n.changeLanguage("fr")
+                                 i18n.changeLanguage("en")
                               } else {
                                 setContextLang("ar")
                                 console.log(contextLang)
-                                i18n.changeLanguage("en")
+                                i18n.changeLanguage("ar")
                               }}} class="nav-link" href="#"><i class="bi bi-globe "></i> {contextLang}</button>
           </li>
           <li class="nav-item mx-4">
-            <button onClick={(e)=>{if (theme === "light") {
+            <button onClick={(e)=>{if (theme === "white") {
                                 setContextTheme("dark")
                                  console.log(theme)
                               } else {
-                                setContextTheme("light")
+                                setContextTheme("white")
                                 console.log(theme)
                               }}} class="nav-link" href="#"><i class="bi bi-palette "></i> {theme}</button>
           </li>

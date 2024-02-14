@@ -9,63 +9,32 @@ import Users from '../pages/users/Users';
 import Theme from '../context/Theme';
 import { LanguageContext } from '../context/language';
 import ScrollBnt from '../components/scrollbtn/scrol-btn';
+import HomePageTemplate from '../pages/homeTemplate/homeTemplate';
+import SignUp from '../pages/registration/signup';
+import LoginPage from '../pages/registration/login';
 
 
 
 const Layout = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(() => {
-    const storedState = localStorage.getItem('sidebarOpen');
-    return storedState ? JSON.parse(storedState) : true; // Use true as a default value if no stored state
-  });
-  
-  useEffect(() => {
-  
-
-    localStorage.setItem('sidebarOpen', JSON.stringify(isSidebarOpen));
-  }, [isSidebarOpen]);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
-  };
-  
-  
-  return (
-    <div className="d-flex mx-0" >
-      <SideBar open={isSidebarOpen} />
-        <div className="mt-0 w-100" style={isSidebarOpen?{marginInlineStart:"250px",transition: ' 0.5s ease'}:{marginInlineStart:"65px",transition: ' 0.5s ease'}}>
-          <NavBar toggleSidebar={toggleSidebar}/>
-        <ScrollBnt/>
-        
-        <div className='mx-3'style={{marginTop:"80px"}} >
+   return(
     <Suspense fallback={<>loading</>}>
         
-        <Routes>
-          {/* <Route path="/login" element={<Loginform/>} /> */}
-          {/* <Route path='' element={<HomePageTemplate/>}> */}
+         <Routes>
+         <Route path="/login" element={<LoginPage/>} /> 
+         <Route path="/signup" element={<SignUp/>} /> 
+           <Route path='' element={<HomePageTemplate/>}>
 
             <Route path="/"  element={<Home/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/users" element={<Users/>} />
             <Route path="*" element={<Notfound/>}/>
-           {/* </Route> */}
+           </Route>
          
          
         
           </Routes>
         
      </Suspense>
-     </div>
-     
-        </div>  
-        
-
-         {/* {window.onscroll = function() {
-         document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? <ScrollBnt/>:<></>}} */}
-    </div>
-    
-
-  );
-};
+)}
 
 export default Layout;

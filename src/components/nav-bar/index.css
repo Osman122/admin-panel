@@ -1,13 +1,23 @@
 .navbar {
 
   border-bottom: 1px;
-  border-color: black;
+  border-color: rgba(34, 32, 32, 0.178);
   border-bottom-style: solid;
   
   position:fixed; 
   top: 0;
   font-size: 18px;
   height: 65px;
+
+
+  position: fixed; /* Fix the position of the navbar */
+ 
+  width: 100%;
+  background-color: #333; /* Example background color */
+  z-index: 1000; /* Ensure the navbar stays on top of other content */
+  padding: 10px 20px; /* Example padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example box shadow */
+
 
 }
 

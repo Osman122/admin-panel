@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter >
 {/* ${theme==="dark" ? "bg-secondary" : " "} */}
        <div   className={`${contextLang === "ar" ? "text-right " : "text-left "} `}
-       style={theme==="dark"?{backgroundColor:"black" ,color:"white"}:{}}
+       style={theme==="dark"?{backgroundColor:"#25303E" ,color:"white"}:{backgroundColor:"#F2F5FA" ,color:"black"}}
         dir={contextLang === "ar" ? "rtl" : "ltr"}>
         <Theme.Provider value={{theme , setContextTheme}}>
         <LanguageContext.Provider value={{ contextLang, setContextLang }}>

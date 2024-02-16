@@ -4,6 +4,7 @@ import Layout from './router/layout';
 import { BrowserRouter } from "react-router-dom";
 import Theme from './context/Theme';
 import { LanguageContext } from './context/language';
+import ScrollBnt from './components/scrollbtn/scrol-btn';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
  <Layout/>
  </LanguageContext.Provider>
       </Theme.Provider>
- 
+      
   </div>
   
   </BrowserRouter>

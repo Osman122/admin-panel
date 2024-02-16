@@ -12,6 +12,7 @@ import ScrollBnt from '../components/scrollbtn/scrol-btn';
 import HomePageTemplate from '../pages/homeTemplate/homeTemplate';
 import SignUp from '../pages/registration/signup';
 import LoginPage from '../pages/registration/login';
+import  Resturants  from "../pages/resturants/resturants";
 
 
 
@@ -25,6 +26,9 @@ const Layout = () => {
            <Route path='' element={<HomePageTemplate/>}>
 
             <Route path="/"  element={<Home/>} />
+            <Route path="/Resturants"  element={<Resturants/>} />
+
+
             <Route path="/about" element={<About/>} />
             <Route path="/users" element={<Users/>} />
             <Route path="*" element={<Notfound/>}/>

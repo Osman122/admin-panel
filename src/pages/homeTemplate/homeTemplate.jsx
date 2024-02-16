@@ -31,12 +31,12 @@ const HomePageTemplate= () => {
         <SideBar open={isSidebarOpen} />
           <div className="mt-0 w-100" style={isSidebarOpen?{marginInlineStart:"250px",transition: ' 0.5s ease'}:{marginInlineStart:"65px",transition: ' 0.5s ease'}}>
             <NavBar toggleSidebar={toggleSidebar}/>
-          <ScrollBnt/>
+          
           
           <div className='mx-3'style={{marginTop:"80px"}} >
           <Outlet />
           </div>
-     
+          <ScrollBnt/>
           </div>  
      
 

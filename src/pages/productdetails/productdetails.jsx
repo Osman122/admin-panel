@@ -96,14 +96,15 @@ function ProductDetails() {
      <h6 className='fw-bold'>Welcome to addmin panel </h6>
      <Breadcrumb className="">
         <Breadcrumb.Item>{t("Dashboard")}</Breadcrumb.Item>
-        <Breadcrumb.Item>{t("Users")}</Breadcrumb.Item>
+        <Breadcrumb.Item>{t("Resturants")}</Breadcrumb.Item>
+        <Breadcrumb.Item>{t(id)}</Breadcrumb.Item>
 
 
   </Breadcrumb>
        </div>
         {restaurant?
     
-         <div className="container">
+         <div dir="ltr" className="container">
             <div className="row py-5 ">
                 <div className="col-md-6">
                     <img src={restaurant.image} alt={restaurant.name} className="img-fluid" />

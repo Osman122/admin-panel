@@ -18,7 +18,7 @@ const { t } = useTranslation();
        
         <div className='mx-4 d-flex my-2  ' style={{position:"relative"}}>
         <img   className={`${!open?"logo":""}`}  src="https://www.spruko.com/demo/dashlot/dist/assets/images/brand-logos/toggle-dark.png" alt="" 
-        style={open?{width:"44px"}:{width:"40px" ,marginLeft:"0px",justifyContent: 'center', alignItems: 'center'}}/>
+        style={open?{width:"44px"}:{width:"32px" ,marginLeft:"3px",justifyContent: 'center', alignItems: 'center'}}/>
         {open? <h5 className="text-light mt-3">{t('Dashboard')}</h5>:<></>}
         
       </div>
@@ -54,14 +54,14 @@ const { t } = useTranslation();
                                 </NavLink>
                             </li>
                             <li className={` dee ${!open?"d-flex":""}`} >
-                            <NavLink  className={" NavLink d-flex p-3"} to={"/about"} activeClassName="active" exact> 
+                            <NavLink  className={" NavLink d-flex p-3"} to={"/products"} activeClassName="active" exact> 
 
                                 <span className={`border border-1 border-light rounded  d-flex text-center ${open?"mx-3":""}`}  
                                 style={{ width:"28px",height:"28px",rotate:"-45deg", position:"relative"}}> 
                                 <i className=" mx-auto text-light   bi bi-body-text " style={{rotate:"45deg", position:"abdolute",top:"50%",left:"50%"}}></i>
                                 </span>
 
-                                 {open? <span className="text-light">{t('About')}</span>:<></>}
+                                 {open? <span className="text-light">{t('Products')}</span>:<></>}
                                 </NavLink>
                             </li>
                             <li className={` dee ${!open?"d-flex":""}`} >

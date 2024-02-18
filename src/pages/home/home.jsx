@@ -32,7 +32,7 @@ const Home = () => {
       <div className="cover-content">
         {/* Add any additional content here */}
         <h1 className="cover-title">Welcome to My Website</h1>
-        <p className="cover-description">This is a sample cover page for demonstration purposes.</p>
+        <p className="cover-description">This is a sample moderation of your buisness.</p>
       </div>
     </div>
     </div>

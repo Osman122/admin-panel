@@ -1,0 +1,9 @@
+
+  
+  
+  
+  /* Hover effect for both themes */
+  .card:hover {
+    transform: translateY(-3px); /* Move card up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+  }

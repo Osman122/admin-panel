@@ -5,6 +5,20 @@
 }
 
 
+.card:hover {
+    
+    transform: translateY(-3px); /* Move card up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.795); /* Enhance shadow */
+  }
 
 
+.card-light {
 
+    
+    color: black;
+
+}
+.card-dark {
+background-color: #1C2531;
+color: aliceblue;
+}

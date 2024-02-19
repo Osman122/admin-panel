@@ -50,8 +50,8 @@ const SignUp = () => {
   
       
     }
-  else{navigate("/login")}
-  console.log("oman"+authToken)},[authToken])
+  else{
+  console.log("oman"+authToken)}},[authToken])
   return(
     <div className='registeration'
       style={{

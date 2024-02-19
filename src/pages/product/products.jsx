@@ -1,12 +1,14 @@
 import { Breadcrumb, Button, Form, Input, Modal, Pagination, Popconfirm, Table, message } from "antd";
 import { useTranslation } from "react-i18next";
-import MapContainer from "../../components/mapview";
 import { useContext, useEffect, useState } from "react";
 import { axiosInstance } from "../../api/config";
 import Theme from "../../context/Theme";
+import { DeleteOutlined,EyeOutlined  } from '@ant-design/icons';
 
 
 const Products = () => { 
+  const {t} =useTranslation()
+
   const [modalProduct, setmodal] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
   const [addmodalVisible, setAddModalVisible] = useState(false);
@@ -16,50 +18,50 @@ const Products = () => {
   
   const columns = [
     {
-      title: 'Image',
+      title: `${t('Image')}`,
       key: 'image',
       render: (text, record) => (
           <img src={record.image} alt={record.name} style={{ width: '50px', height: '50px' }} />
       ),
   },
     {
-      title: 'Id',
+      title: t('Id'),
       dataIndex: 'id',
       key: 'id',
     },
     {
-      title: 'Name',
+      title: t('Name'),
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: 'Price',
+      title: t('Price'),
       dataIndex: 'price',
       key: 'price',
     },{
-      title: 'Quantity',
+      title: t('Quantity'),
       dataIndex: 'quantity',
       key: 'quantity',
     } ,{
-      title: 'Resturant_Id',
+      title: t('Resturant_Id'),
       dataIndex: "restaurant_id",
       key: 'restaurant_id',
     },{
-      title: 'Show product',
+      title: t('Show Product'),
       key: 'action',
       render: (text, record) => (
           <Button
-        type="primary"
-             color="blue"              
+            
+             icon={<EyeOutlined />}             
               onClick={() => {
                   setmodal(record);
                   setModalVisible(true);
               }}
-          >Show Product</Button>
+          >{t("Show Product")}</Button>
       ),
   },
     {
-      title: 'Delete',
+      title: t('Delete'),
       key: 'action',
       render: (text, record) => (
         <Popconfirm
@@ -68,8 +70,10 @@ const Products = () => {
           okText="Yes"
           cancelText="No"
         >
-          <Button  danger>
-            Delete
+          <Button 
+          danger
+          icon={<DeleteOutlined />}>
+            {t("Delete")}
           </Button>
         </Popconfirm>
       ),
@@ -83,9 +87,7 @@ const Products = () => {
 
   const productsPerPage = 10; // Number of products per page
 
-  const {t} =useTranslation()
-  const latitude = 37.7749;
-    const longitude = -122.4194;
+  
     
 
   const fetchProductData = async () => {
@@ -135,7 +137,7 @@ const handleDelete = async (productId) => {
          <div style={{}}
       dir="">
       
-        <h6 className='fw-bold'>Welcome to addmin panel </h6>
+        <h6 className='fw-bold'>{t("Welcome to addmin panel")} </h6>
     <nav aria-label="breadcrumb" className=''>
      </nav>
   <Breadcrumb>
@@ -156,12 +158,12 @@ const handleDelete = async (productId) => {
 
 <div className="text-center p-5 justify-content-center w-100" >
 <div className={` bg-${theme} rounded p-5 mb-5 lh-lg   `}>
-        <h1>Welcome to our resturants app</h1>
-        <p>Enter product Name to find.</p>
-        <div className="d-flex " dir="ltr">
+        <h1>{t("Welcome to our resturants app")}</h1>
+        <p>{t("Enter product Name to find.")}</p>
+        <div className="d-flex ">
             <input onChange={(event)=>{setSearchKey(event.target.value)
                                        setCurrentPage(1)}} 
-                                       type="search"  className="form-control rounded vw-75 me-5" placeholder="Search and explore" aria-label="Search" aria-describedby="search-addon" />
+                                       type="search"  className="form-control rounded vw-75 me-5" placeholder={t("Search and explore")} aria-label="Search" aria-describedby="search-addon" />
             {/* <Button className="bg-primary" style={{width: '150px'}} variant="primary" onClick={(event) => {
               
               fetchProductData();
@@ -169,15 +171,15 @@ const handleDelete = async (productId) => {
             
         </div>
         <div className="d-flex pt-4 justify-content-center">
-              <h3 className="mx-4">Add new Product from here</h3>
-              <Button type="primary" onClick={() => setAddModalVisible(true)}>
-                Add Product
+              <h3 className="mx-4">{t("Add new Product from here")}</h3>
+              <Button className="mt-1" type="primary" onClick={() => setAddModalVisible(true)}>
+                {t("Add Product")}
             </Button>
             </div>
         </div>
 
 <div
-  dir="ltr"> 
+  dir=""> 
     
             <Table className="colorBgSpotlight"
             
@@ -216,6 +218,7 @@ const handleDelete = async (productId) => {
                 onOk={() => {
                     form.validateFields().then((values) => {
                         handleAddProduct(values);
+                        console.log(values)
                     });
                 }}
             >

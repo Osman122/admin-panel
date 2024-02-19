@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../api/config";
-import MapContainer from "../../components/mapview";
 import { Breadcrumb, Button, Modal, Popconfirm, Table, message } from "antd";
 import { t } from "i18next";
+import { DeleteOutlined,EyeOutlined  } from '@ant-design/icons';
+
 
 function ProductDetails() {
   const [modalProduct, setmodal] = useState({});
@@ -19,67 +20,69 @@ function ProductDetails() {
     })
      
   };
-    const columns = [
-        {
-          title: 'Image',
-          key: 'image',
-          render: (text, record) => (
-              <img src={record.image} alt={record.name} style={{ width: '50px', height: '50px' }} />
-          ),
-      },
-        {
-          title: 'Id',
-          dataIndex: 'id',
-          key: 'id',
-        },
-        {
-          title: 'Name',
-          dataIndex: 'name',
-          key: 'name',
-        },
-        {
-          title: 'Price',
-          dataIndex: 'price',
-          key: 'price',
-        },{
-          title: 'Quantity',
-          dataIndex: 'quantity',
-          key: 'quantity',
-        } ,{
-          title: 'Resturant_Id',
-          dataIndex: "restaurant_id",
-          key: 'restaurant_id',
-        },{
-          title: 'Show product',
-          key: 'action',
-          render: (text, record) => (
-              <Button
-            type="primary"
-                 color="blue"              
-                  onClick={() => {
-                      setmodal(record);
-                      setModalVisible(true);
-                  }}
-              >Show Product</Button>
-          ),
-      },
-        {
-          title: 'Delete',
-          key: 'action',
-          render: (text, record) => (
-            <Popconfirm
-              title="Are you sure to delete this product?"
-              onConfirm={() => handleDelete(record.id)}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button  danger>
-                Delete
-              </Button>
-            </Popconfirm>
-          ),
-        },
-      ];
+  const columns = [
+    {
+      title: `${t('Image')}`,
+      key: 'image',
+      render: (text, record) => (
+          <img src={record.image} alt={record.name} style={{ width: '50px', height: '50px' }} />
+      ),
+  },
+    {
+      title: t('Id'),
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: t('Name'),
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: t('Price'),
+      dataIndex: 'price',
+      key: 'price',
+    },{
+      title: t('Quantity'),
+      dataIndex: 'quantity',
+      key: 'quantity',
+    } ,{
+      title: t('Resturant_Id'),
+      dataIndex: "restaurant_id",
+      key: 'restaurant_id',
+    },{
+      title: t('Show Product'),
+      key: 'action',
+      render: (text, record) => (
+          <Button
+            
+             icon={<EyeOutlined />}             
+              onClick={() => {
+                  setmodal(record);
+                  setModalVisible(true);
+              }}
+          >{t("Show Product")}</Button>
+      ),
+  },
+    {
+      title: t('Delete'),
+      key: 'action',
+      render: (text, record) => (
+        <Popconfirm
+          title="Are you sure to delete this product?"
+          onConfirm={() => handleDelete(record.id)}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button 
+          danger
+          icon={<DeleteOutlined />}>
+            {t("Delete")}
+          </Button>
+        </Popconfirm>
+      ),
+    },
+  ];
     const { id } = useParams();
     const [restaurant, setRestauranr] = useState(null);
     const getData = async () => {
@@ -93,7 +96,7 @@ function ProductDetails() {
       }, []);
     return  <div>
            <div className="my-2">
-     <h6 className='fw-bold'>Welcome to addmin panel </h6>
+     <h6 className='fw-bold'>{t("Welcome to addmin panel")} </h6>
      <Breadcrumb className="">
         <Breadcrumb.Item>{t("Dashboard")}</Breadcrumb.Item>
         <Breadcrumb.Item>{t("Resturants")}</Breadcrumb.Item>
@@ -114,15 +117,12 @@ function ProductDetails() {
                     <p><strong>ID:</strong> {restaurant.id}</p>
                     <p><strong>Address:</strong> {restaurant.address}</p>
                     <p><strong>lat:</strong> {restaurant.restaurant_lat}.     .<strong>Long:</strong> {restaurant.restaurant_long}</p>
-         <div className="me-5 pe-5">
-            <h1>Google Map View</h1>
-            <MapContainer latitude={restaurant.restaurant_lat} longitude={restaurant.restaurant_long} />
-        </div>
+       
                 </div>
             </div>
             <div className="p-5"
             dir="ltr"> 
-    <h4 className="fw-bolder text-center">Restaurant Products</h4>
+    <h4 className="fw-bolder text-center">{t("Restaurant Products")}</h4>
             <Table 
             
                 

@@ -6,8 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import Layout from "../../router/layout";
 import NavBar from "../../components/nav-bar/nav-bar";
 import ScrollBnt from "../../components/scrollbtn/scrol-btn";
+import { useSelector } from "react-redux";
 
 const HomePageTemplate= () => {
+ const token = useSelector(state => state.authToken)
+
     const navigate =useNavigate()
     const [isSidebarOpen, setSidebarOpen] = useState(() => {
       const storedState = localStorage.getItem('sidebarOpen');
@@ -15,10 +18,16 @@ const HomePageTemplate= () => {
     });
     
     useEffect(() => {
-    
-      
-      localStorage.setItem('sidebarOpen', JSON.stringify(isSidebarOpen));
-    }, [isSidebarOpen]);
+      if (token !== "")
+
+      {
+        localStorage.setItem('sidebarOpen', JSON.stringify(isSidebarOpen));
+
+      }else{
+      navigate("/login")
+      console.log("token is"+ token)
+      }
+    }, [isSidebarOpen,token]);
   
     const toggleSidebar = () => {
       setSidebarOpen(!isSidebarOpen);
@@ -33,7 +42,7 @@ const HomePageTemplate= () => {
             <NavBar toggleSidebar={toggleSidebar}/>
           
           
-          <div className='mx-3'style={{marginTop:"80px"}} >
+          <div className='mx-5'style={{marginTop:"80px", marginBottom:"30px"}} >
           <Outlet />
           </div>
           <ScrollBnt/>

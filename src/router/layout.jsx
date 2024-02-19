@@ -12,8 +12,9 @@ import HomePageTemplate from '../pages/homeTemplate/homeTemplate';
 import SignUp from '../pages/registration/signup';
 import LoginPage from '../pages/registration/login';
 import  Resturants  from "../pages/resturants/resturants";
-import Products from '../pages/about/products';
+
 import ProductDetails from '../pages/productdetails/productdetails';
+import Products from '../pages/product/products';
 
 
 

@@ -3,9 +3,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { setAuthToken } from '../../store/reducer';
+import { useDispatch } from 'react-redux';
 
 const Sidebar = ({ open }) => {
 const { t } = useTranslation();
+const dispatch = useDispatch();
   
   
   
@@ -17,7 +20,7 @@ const { t } = useTranslation();
       <div dir='ltr' className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>
        
         <div className='mx-4 d-flex my-2  ' style={{position:"relative"}}>
-        <img   className={`${!open?"logo":""}`}  src="https://www.spruko.com/demo/dashlot/dist/assets/images/brand-logos/toggle-dark.png" alt="" 
+        <img   className={`${!open?"logo mb-2":""}`}  src="https://www.spruko.com/demo/dashlot/dist/assets/images/brand-logos/toggle-dark.png" alt="" 
         style={open?{width:"44px"}:{width:"32px" ,marginLeft:"3px",justifyContent: 'center', alignItems: 'center'}}/>
         {open? <h5 className="text-light mt-3">{t('Dashboard')}</h5>:<></>}
         
@@ -93,7 +96,8 @@ const { t } = useTranslation();
        
 
 
-        <li className={` dee rounded  ${!open?"d-flex":"rounded "}`} >
+        <li className={` dee rounded  ${!open?"d-flex":"rounded "}`} onClick={()=>{ dispatch(setAuthToken(""));
+}} >
         <NavLink  className={" NavLink d-flex p-3"} to={"/login"} activeClassName="active" exact> 
 
             <span className={`border border-1 border-light rounded  d-flex text-center ${open?"mx-3":""}`}  

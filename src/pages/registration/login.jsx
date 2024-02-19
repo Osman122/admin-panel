@@ -1,22 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import backgroundImage from '../../background/397493-food-fruit.jpg'; // Import your background image
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
 import { Button, Checkbox, Form, Input } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Card, Container, Row, Col } from 'react-bootstrap';
 import "./index.css"
-const onFinish = (values) => {
-  
-  console.log('Success:', values);
-};
+import { useDispatch, useSelector } from 'react-redux';
+import { setAuthToken } from '../../store/reducer';
+import { useNavigate } from 'react-router-dom';
+import { axiosInstance } from '../../api/config';
+import { ToastContainer, toast } from 'react-toastify';
+
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
 
 const LoginPage = () => {
+  const authToken = useSelector(state => state.authToken);
+  const navigate =useNavigate()
+
+  const dispatch = useDispatch();
+
+    const handleLogin = (values) => {
+        axiosInstance.post(`https://academy-training.appssquare.com/api/login`,values)
+        .then((response)=>{
+           // Replace with your actual token
+              
+          // Dispatch action to store the token in Redux store
+          dispatch(setAuthToken(response.data.token));
+          console.log(response.data)
+          toast.success(response.data.message);
+          
+         // message.success("You have successfully signed up.");
+         
+         }).catch((error)=>{
+          
+           toast.error("Invalid Email Adress");
+          
+          
+         })}
+
+         const onFinish = (values) => {
+  
+          console.log('Success:', values);
+          handleLogin(values);
+        };
+       
+    
   const {passwordVisible, setPasswordVisible} = useState(false);
+  useEffect(()=>{if (authToken !== "") {
+    console.log("token="+authToken)
+    navigate("/")
+
+    
+  }
+else{navigate("/login")}
+console.log("oman"+authToken)},[authToken])
   return(
+    
     <div className='registeration'
       style={{
         
@@ -26,6 +67,8 @@ const LoginPage = () => {
         padding: '20px',
       }}
     >
+               <ToastContainer position="top-center" autoClose="1500"  />      
+
          <div style={{position:"absolute",backdropFilter:"blur(3px)" ,height:"100%",width:"100%",left:"0",top:"0"}}></div>
  
         <section>
@@ -49,8 +92,8 @@ const LoginPage = () => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
+        name="email"
+        rules={[{ required: true, message: 'Please input your email!' }]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
       </Form.Item>
@@ -65,13 +108,7 @@ const LoginPage = () => {
         
       />
       </Form.Item>
-      <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        
-      </Form.Item>
+     
 
       <Form.Item style={{justifyContent:"space-between"}}>
         <Button type="primary" htmlType="submit" className="login-form-button w-100">

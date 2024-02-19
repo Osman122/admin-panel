@@ -2,20 +2,45 @@ import React, { useState } from 'react';
 import backgroundImage from '../../background/397493-food-fruit.jpg'; // Import your background image
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import { LockOutlined, UserOutlined , MailOutlined } from '@ant-design/icons';
-import { Card, Container, Row, Col } from 'react-bootstrap';
 import "./index.css"
-const onFinish = (values) => {
-  
-  console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
+import { axiosInstance } from '../../api/config';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+
 
 const SignUp = () => {
+
+  const [form] = Form.useForm();
+  
+  
   const {passwordVisible, setPasswordVisible} = useState(false);
+  
+  const handlesignUp =(values) => {
+    axiosInstance.post(`https://academy-training.appssquare.com/api/sign_up`,values)
+    .then((response)=>{
+      console.log(response.data.message)
+      toast.success(response.data.message);
+      form.resetFields()
+     // message.success("You have successfully signed up.");
+     
+     }).catch((error)=>{
+      
+       toast.error("Invalid Email Adress");
+      
+      
+     })}
+     const onFinish = (values) => {
+  
+      console.log(values);
+      handlesignUp(values);
+      
+    };
+    const onFinishFailed = (errorInfo) => {
+      console.log('Failed:', errorInfo);
+    };
+
   return(
     <div className='registeration'
       style={{
@@ -26,13 +51,14 @@ const SignUp = () => {
         padding: '20px',
       }}
     >
+         <ToastContainer position="top-center" autoClose="1500"  />      
          <div style={{position:"absolute",backdropFilter:"blur(3px)" ,height:"100%",width:"100%",left:"0",top:"0"}}></div>
  
         <section>
         <div className="midscreen container">
             <div className="row justify-content-center">
                
-                <div className="register-card col-lg-5"  style={{height:"600px"}}>
+                <div className="register-card col-lg-5"  style={{height:"550px ", paddingTop:"20px"}}>
                 <div className='d-flex justify-content-center'>
                 <img   className="" src="https://www.spruko.com/demo/dashlot/dist/assets/images/brand-logos/toggle-dark.png" alt="" 
         style={{backgroundColor:"black",width:"50px", textAlign:"center",justifyContent: 'center', alignItems: 'center'}}/>
@@ -42,10 +68,11 @@ const SignUp = () => {
                         <p className="text-muted" style={{textTransform:'capitalize'}}>manage your resturant</p>
                     </div>
                 <Form
+                form={form}
       size='large'          
       name="normal_login"
       className="login-form"
-      initialValues={{ remember: true }}
+      
       onFinish={onFinish}
     >
       <Form.Item
@@ -71,20 +98,14 @@ const SignUp = () => {
         
       />
       </Form.Item>
-      <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        
-      </Form.Item>
+      <br />
 
       <Form.Item style={{justifyContent:"space-between"}}>
         <Button type="primary" htmlType="submit" className="login-form-button w-100">
           Sign Up
         </Button>
         <h5 className='text-center p-2'>Or</h5>
-        <div  className="text-center"> <a style={{justifyContent:"center",fontSize:'16px'}} href="/login">logIn now!</a></div>
+        <div  className="text-center d-flex justify-content-center"> <p className='text-secondary '>Alredy Have Acount ?</p> <a style={{justifyContent:"center",fontSize:'14px'}} href="/login">Sign In Now!</a></div>
       </Form.Item>
     </Form>
     </div>

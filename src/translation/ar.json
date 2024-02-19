@@ -5,7 +5,35 @@
     "Home":"الرئيسيه",
     "Products":"المنتجات",
     "LogOut":"تسجيل الخروج",
-    "Dashboard":"وحده التحكم"
+    "Dashboard":"وحده التحكم",
+    "Welcome to My WebSite":"أهلا في موقعنــا",
+    "Welcome to addmin panel":"أهلا في وحده التحكم",
+    "This is a sample moderation of your buisness.":"اسهل طريقه لاداره مشرةعــاتك.",
+    "Total Users":"عدد المستخدمون",
+    "Total Product":"عدد المستخدمون",
+    "Total Restaurant":"عدد المستخدمون",
+    "Total Orders":"عدد الطلبات",
+    "there is no resturant with name contain..":"لا يوجد مطاعم تحتوي هذا الاسم.",
+    "Welcome to our resturants app":"أهلا في تطبيقنا للمطاعم",
+    "Millions of Place and to explore.":"ملايين الاماكن متاحه للاستكشاف.",
+    "Search and explore":"ابحث واستكشف",
+    "Show details":"عرض التفاصيل",
+    "Enter product Name to find.":"ادخل اسم المنتج لايجاده",
+    "Add new Product from here":"يمكنك اضافه منتج جديد من هنا",
+    "Add Product":"أضافه منتج",
+    "Restaurant Products":"منتجات المطعــم",
+    "Show Product":"عرض المنتج",
+    "Delete":"حذف",
+    "Image":"الصوره",
+    "Id":"الرقم",
+    "Name":"الاسم",
+    "Price":"السعر",
+    "Quantity":"الكميه",
+    "Resturant_Id":"رقم المطعم"
+
+    
+
+
     
   }
   

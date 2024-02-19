@@ -32,21 +32,21 @@ export default function Resturants () {
 
     return <div> 
      <div className="my-2">
-     <h6 className='fw-bold'>Welcome to addmin panel </h6>
+     <h6 className='fw-bold'>{t("Welcome to addmin panel")} </h6>
      <Breadcrumb className="">
         <Breadcrumb.Item>{t("Dashboard")}</Breadcrumb.Item>
-        <Breadcrumb.Item>{t("Users")}</Breadcrumb.Item>
+        <Breadcrumb.Item>{t("Resturants")}</Breadcrumb.Item>
 
 
   </Breadcrumb>
   </div>
         
     <div className={`bg-${theme} rounded p-5 mb-5 lh-lg text-center  `}>
-        <h1>Welcome to our resturants app</h1>
-        <p>Millions of Place and to explore.</p>
+        <h1>{t("Welcome to our resturants app")}</h1>
+        <p>{t("Millions of Place and to explore.")}</p>
         <div className="d-flex">
             <input onChange={(event)=>{setSearchKey(event.target.value)}} 
-             type="search"  className="form-control rounded vw-75 me-5" placeholder="Search and explore" aria-label="Search" aria-describedby="search-addon" />
+             type="search"  className="form-control rounded vw-75 me-5" placeholder={t("Search and explore")} aria-label="Search" aria-describedby="search-addon" />
             {/* <Button className="bg-primary" style={{width: '150px'}} variant="primary" onClick={(event) => {
                 
             }}>Search</Button>{' '} */}
@@ -66,7 +66,7 @@ export default function Resturants () {
     <span class="sr-only"></span>
   </div>
 </div>:<div className="d-flex justify-content-center  "style={{height:"100vh"}}><h3>
-    there is no resturant with name contain.. {searchKey}</h3> </div>}
+    {t("there is no resturant with name contain..")} {searchKey}</h3> </div>}
     </>}
     
 </div>

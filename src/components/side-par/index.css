@@ -63,7 +63,7 @@
   background: #555; /* Color of the scrollbar handle on hover */
 }
 .active {
-  background-color: rgb(61, 87, 160); /* Example of styling the active link */
+  background-color: rgb(109, 7, 7); /* Example of styling the active link */
 }
 /* NavLink:focus {
   outline: none; /* Remove default focus outline */

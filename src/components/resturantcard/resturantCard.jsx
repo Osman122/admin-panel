@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import {Theme} from '../../context/Theme.js'
 import './index.css'
+import { t } from "i18next";
 export default function ResturantCard (props) {
   const navigate = useNavigate()
   const showMovieDetails = (id) => {
@@ -31,7 +32,7 @@ export default function ResturantCard (props) {
               </p>
               </div>
             </div> 
-                         <button  className ="mt-3 mx-4 btn btn-primary " onClick={() => showMovieDetails(resturant.id)}> Show details</button>
+                         <button  className ="mt-3 mx-4 btn btn-primary " onClick={() => showMovieDetails(resturant.id)}> {t("Show details")}</button>
 
    </div>
     )

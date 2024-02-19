@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import backgroundImage from '../../background/397493-food-fruit.jpg'; // Import your background image
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
@@ -8,9 +8,13 @@ import "./index.css"
 import { axiosInstance } from '../../api/config';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
+  const authToken = useSelector(state => state.authToken);
+  const navigate =useNavigate()
 
   const [form] = Form.useForm();
   
@@ -40,7 +44,14 @@ const SignUp = () => {
     const onFinishFailed = (errorInfo) => {
       console.log('Failed:', errorInfo);
     };
-
+    useEffect(()=>{if (authToken !== "") {
+      console.log("token="+authToken)
+      navigate("/")
+  
+      
+    }
+  else{navigate("/login")}
+  console.log("oman"+authToken)},[authToken])
   return(
     <div className='registeration'
       style={{

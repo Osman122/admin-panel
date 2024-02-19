@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 const HomePageTemplate= () => {
  const token = useSelector(state => state.authToken)
 
+
     const navigate =useNavigate()
     const [isSidebarOpen, setSidebarOpen] = useState(() => {
       const storedState = localStorage.getItem('sidebarOpen');
@@ -21,6 +22,7 @@ const HomePageTemplate= () => {
       if (token !== "")
 
       {
+        console.log("token is "+ token)
         localStorage.setItem('sidebarOpen', JSON.stringify(isSidebarOpen));
 
       }else{

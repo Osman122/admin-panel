@@ -134,7 +134,7 @@ const handleDelete = async (productId) => {
 
     return (
      
-         <div style={{}}
+         <div className="w-w-auto"
       dir="">
       
         <h6 className='fw-bold'>{t("Welcome to addmin panel")} </h6>
@@ -156,8 +156,8 @@ const handleDelete = async (productId) => {
         </div>
         </div> */}
 
-<div className="text-center p-5 justify-content-center w-100" >
-<div className={` bg-${theme} rounded p-5 mb-5 lh-lg   `}>
+<div className="text-center p-lg-5 justify-content-center w-100" >
+<div className={` bg-${theme} rounded p-lg-5 mb-lg-5 lh-lg   `}>
         <h1>{t("Welcome to our resturants app")}</h1>
         <p>{t("Enter product Name to find.")}</p>
         <div className="d-flex ">
@@ -171,7 +171,7 @@ const handleDelete = async (productId) => {
             
         </div>
         <div className="d-flex pt-4 justify-content-center">
-              <h3 className="mx-4">{t("Add new Product from here")}</h3>
+              {/* <h3 className="mx-lg-4">{t("Add new Product from here")}</h3> */}
               <Button className="mt-1" type="primary" onClick={() => setAddModalVisible(true)}>
                 {t("Add Product")}
             </Button>
@@ -188,6 +188,10 @@ const handleDelete = async (productId) => {
                 columns={columns}
                 dataSource={productData}
                 pagination={false} // Disable table pagination
+                scroll={{
+                  x: 1000,
+                  y:250
+                }}
                 
             />
             <Pagination

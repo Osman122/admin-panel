@@ -28,11 +28,11 @@ const Home = () => {
     <div style={{textAlign:"center" ,height:"100%" ,justifyContent:"center", padding:"0px"}}>
     <div className="cover-container">
       <img src={coverImage} alt="Cover" className="cover-image" style={theme==="dark"?{filter:"brightness(50%)"}:{}}/>
-      <div className="cover-overlay"></div> {/* Add a semi-transparent overlay to enhance the image */}
+      <div className="cover-overlay h-100"></div> {/* Add a semi-transparent overlay to enhance the image */}
       <div className="cover-content">
         {/* Add any additional content here */}
         <h1 className="cover-title">{t("Welcome to My WebSite")}</h1>
-        <p className="cover-description">{t("This is a sample moderation of your buisness.")}</p>
+        <p className="cover-description fs-5">{t("This is a sample moderation of your buisness.")}</p>
       </div>
     </div>
     </div>

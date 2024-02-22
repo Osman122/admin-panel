@@ -44,7 +44,7 @@ const HomePageTemplate= () => {
             <NavBar toggleSidebar={toggleSidebar}/>
           
           
-          <div className='w-100 ' >
+          <div className='w-100 px-3 py-2' >
           <Outlet />
           </div>
           <ScrollBnt/>

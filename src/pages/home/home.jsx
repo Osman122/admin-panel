@@ -9,7 +9,7 @@ const Home = () => {
   
   const { t } = useTranslation();
   return(
-  <div className='main-container container-fluid'>
+  <div className='main-container container-fluid w-100'>
     
     <div style={{paddingBottom:"10px"}}
       dir="">

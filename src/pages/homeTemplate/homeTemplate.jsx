@@ -44,7 +44,7 @@ const HomePageTemplate= () => {
             <NavBar toggleSidebar={toggleSidebar}/>
           
           
-          <div className='mx-5 w-100'style={{marginTop:"80px", marginBottom:"30px"}} >
+          <div className='w-100 ' >
           <Outlet />
           </div>
           <ScrollBnt/>

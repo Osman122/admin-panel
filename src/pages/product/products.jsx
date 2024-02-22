@@ -190,7 +190,7 @@ const handleDelete = async (productId) => {
                 pagination={false} // Disable table pagination
                 scroll={{
                   x: 1000,
-                  y:250
+                  
                 }}
                 
             />

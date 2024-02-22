@@ -5,19 +5,20 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { setAuthToken } from '../../store/reducer';
 import { useDispatch } from 'react-redux';
-import MobileSidebar from './mobile-side';
 
-const Sidebar = ({ open }) => {
+const MobileSidebar = ({ open }) => {
 const { t } = useTranslation();
 const dispatch = useDispatch();
   
   
   
+  
 
-  return (
-    <div className=' z-3 '>  
-    <nav className={`bg-dark sidebar  parent  position-sticky top-0 overflow-y-auto d-none d-sm-block d-md-block d-lg-block d-xl-block ${open?"   ":"" }`}
-    style={open?{width:"250px" ,transition: 'width 0.5s ease',overflowy:"auto"} : { width:"65px",overflowy:"auto"  ,transition: 'width 0.3s ease'}}>
+  return <div className={` z-3 ${open?" d-none":"position-sticky sidebar-phone" }` } >
+
+  
+        <nav className={`bg-dark sidebar  parent  position-sticky top-0 overflow-y-auto    `}
+    style={open?{width:"250px" ,transition: 'width 0.5s ease',overflowy:"auto" } : {width:"65px",overflowy:"auto" ,height: '100vh' ,transition: 'width 0.3s ease'}}>
     
       <div dir='ltr' className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>
        
@@ -28,7 +29,7 @@ const dispatch = useDispatch();
         
       </div>
 
-        <ul className="nav flex-column  ">
+        <ul className="nav flex-column ">
 
         <li className={` dee ${!open?"d-flex":"rounded  "}`} >
                               <NavLink  className={" NavLink d-flex p-3"} to={"/"} activeClassName="active" exact> 
@@ -116,14 +117,9 @@ const dispatch = useDispatch();
           </div>
   
     </nav>
-    <MobileSidebar open={open}/> 
-    </div>
-
-    
+        <div className='flex-grow-1 bg-dark '></div>
       
-
-
-  );
+         </div>;
 };
 
-export default Sidebar;
+export default MobileSidebar;

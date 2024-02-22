@@ -67,7 +67,7 @@ console.log("oman"+authToken)},[authToken])
         padding: '20px',
       }}
     >
-               <ToastContainer position="top-center" autoClose="1500"  />      
+               <ToastContainer position="top-center" autoClose="2100"  />      
 
          <div style={{position:"absolute",backdropFilter:"blur(3px)" ,height:"100%",width:"100%",left:"0",top:"0"}}></div>
  

@@ -15,19 +15,19 @@ const NavBar= ({ toggleSidebar }) => {
   const { t, i18n } = useTranslation();
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${theme} py-2  w-100 bg-${theme}`}style={{position:"fixed",top:"0" }} >
-          <div className="container-fluid ">
+        <nav className={`justify-content-between d-flex  py-4 px-2 z-3 sticky-top  navbar-${theme} py-2  w-100 bg-${theme}`} >
+          <div className=" ">
           
-            <i onClick={toggleSidebar} className={`bi bi-list nav-item ${theme === 'dark' ?'text-light ':""}`}></i>
+            <i onClick={toggleSidebar} className={`bi bi-list nav-item d-none d-sm-block d-md-block ${theme === 'dark' ?'text-light ':""}`}></i>
             
           </div>
-          <div class="container">
+          
      
      
-      <div class="collapse navbar-collapse" id="navbarNav">
+      
         
-        <ul class="navbar-nav mx-auto ">
-          <li class="nav-item mx-4">
+        <div className='d-flex me-5'>
+          <div class="nav-item mx-4  ">
             <button onClick={(e)=>{if (contextLang === "ar") {
                                 setContextLang("en")
                                  console.log(contextLang)
@@ -37,8 +37,8 @@ const NavBar= ({ toggleSidebar }) => {
                                 console.log(contextLang)
                                 i18n.changeLanguage("ar")
                               }}} class="nav-link" href="#"><i class="bi bi-globe "></i> {contextLang}</button>
-          </li>
-          <li class="nav-item mx-4">
+          </div>
+          <div class="nav-item mx-4">
             <button onClick={(e)=>{if (theme === "white") {
                                 setContextTheme("dark")
                                  console.log(theme)
@@ -46,10 +46,10 @@ const NavBar= ({ toggleSidebar }) => {
                                 setContextTheme("white")
                                 console.log(theme)
                               }}} class="nav-link" href="#"><i class="bi bi-palette "></i> {theme}</button>
-          </li>
-        </ul>
-      </div>
-    </div>
+          </div>
+        
+          </div>
+    
         </nav>
         
       );

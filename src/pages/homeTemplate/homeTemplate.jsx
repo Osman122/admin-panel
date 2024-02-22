@@ -15,7 +15,7 @@ const HomePageTemplate= () => {
     const navigate =useNavigate()
     const [isSidebarOpen, setSidebarOpen] = useState(() => {
       const storedState = localStorage.getItem('sidebarOpen');
-      return storedState ? JSON.parse(storedState) : true; // Use true as a default value if no stored state
+      return storedState ? JSON.parse(storedState) : false; // Use true as a default value if no stored state
     });
     
     useEffect(() => {
@@ -39,8 +39,8 @@ const HomePageTemplate= () => {
     
     return (
       <div className="d-flex mx-0" >
-        <SideBar open={isSidebarOpen} />
-          <div className="mt-0 w-100" style={isSidebarOpen?{marginInlineStart:"250px",transition: ' 0.5s ease'}:{marginInlineStart:"65px",transition: ' 0.5s ease'}}>
+        <SideBar open={isSidebarOpen}  />
+          <div className={`mt-0 w-100 ${isSidebarOpen?"":""}`} style={isSidebarOpen?{marginInlineStart:"",transition: ' 0.5s ease'}:{marginInlineStart:"",transition: ' 0.5s ease'}}>
             <NavBar toggleSidebar={toggleSidebar}/>
           
           

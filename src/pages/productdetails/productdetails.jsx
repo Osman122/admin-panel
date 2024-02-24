@@ -129,6 +129,12 @@ function ProductDetails() {
                 columns={columns}
                 dataSource={restaurant.products}
                 pagination={false} // Disable table pagination
+                scroll={{
+                  x: 1000,
+                  
+                  
+                }}
+
                 
             />
             <Modal

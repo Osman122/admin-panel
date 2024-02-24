@@ -6,7 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { setAuthToken } from '../../store/reducer';
 import { useDispatch } from 'react-redux';
 
-const MobileSidebar = ({ open }) => {
+const MobileSidebar = ({ oo }) => {
+  const open= false
 const { t } = useTranslation();
 const dispatch = useDispatch();
   

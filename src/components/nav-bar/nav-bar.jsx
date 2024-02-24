@@ -15,7 +15,7 @@ const NavBar= ({ toggleSidebar }) => {
   const { t, i18n } = useTranslation();
 
     return (
-        <nav className={`justify-content-between d-flex  py-4 px-2 z-3 sticky-top  navbar-${theme} py-2  w-100 bg-${theme}`} >
+        <nav className={`justify-content-between d-flex navbar py-4 px-2 z-3 sticky-top  navbar-${theme} py-2  w-100 bg-${theme}`} >
           <div className=" ">
           
             <i onClick={toggleSidebar} className={`bi bi-list nav-item d-none d-sm-block d-md-block ${theme === 'dark' ?'text-light ':""}`}></i>

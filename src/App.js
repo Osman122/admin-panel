@@ -12,9 +12,9 @@ function App() {
   const [theme, setContextTheme] = useState("white");
 
   return (
-    <BrowserRouter >
+    <BrowserRouter  >
 {/* ${theme==="dark" ? "bg-secondary" : " "} */}
-       <div   className={`${contextLang === "ar" ? "text-right " : "text-left "} w-100`}
+       <div   className={`${contextLang === "ar" ? "text-right " : "text-left "} w-100 container-fluid p-0`}
        style={theme==="dark"?{backgroundColor:"#3b444c" ,color:"white" ,textDecorationColor:"white"}:{backgroundColor:"#F2F5FA" ,color:"black"}}
         dir={contextLang === "ar" ? "rtl" : "ltr"}>
         <Theme.Provider value={{theme , setContextTheme}}>

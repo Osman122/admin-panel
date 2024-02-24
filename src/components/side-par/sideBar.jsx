@@ -16,7 +16,7 @@ const dispatch = useDispatch();
 
   return (
     <div className=' z-3 '>  
-    <nav className={`bg-dark sidebar  parent  position-sticky top-0 overflow-y-auto d-none d-sm-block d-md-block d-lg-block d-xl-block ${open?"   ":"" }`}
+    <nav className={`bg-dark sidebar  parent  position-sticky top-0 overflow-y-auto d-none d-sm-flex d-md-flex d-lg-flex d-xl-flex ${open?"   ":"" }`}
     style={open?{width:"250px" ,transition: 'width 0.5s ease',overflowy:"auto"} : { width:"65px",overflowy:"auto"  ,transition: 'width 0.3s ease'}}>
     
       <div dir='ltr' className="sidebar-sticky " style={{ overflowy:"auto",overflowx:"auto"}}>

@@ -134,7 +134,7 @@ const handleDelete = async (productId) => {
 
     return (
      
-         <div className="w-w-auto"
+         <div className="w-auto"
       dir="">
       
         <h6 className='fw-bold'>{t("Welcome to addmin panel")} </h6>
@@ -182,16 +182,18 @@ const handleDelete = async (productId) => {
   dir=""> 
     
             <Table className="colorBgSpotlight"
-            
                 
-                style={{backgroundColor:"red", color:"black"}}
+                
+                style={{ color:"black" ,bodySortBg:"#141414"}}
                 columns={columns}
                 dataSource={productData}
                 pagination={false} // Disable table pagination
                 scroll={{
                   x: 1000,
                   
+                  
                 }}
+
                 
             />
             <Pagination
